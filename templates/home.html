@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css' )}}">
+    <title> Mars Trading </title>
+    <!-- Boxin icons link from boxin-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+<body>
+
+    <header>
+        <!--  Nav Container -->
+        <div class="nav container">
+        <!-- Menu Icon -->
+        <i class='bx bx-menu' id="menu-icon" ></i>
+        <!-- Logo -->
+            <a href="#" class="logo">Mars<span>Trading</span></a>
+        <!-- nav list -->
+            <ul class="navbar">
+                <li> <a href="#home" class="active">Home</a></li>
+                <li> <a href="#cars">Cars </a></li>
+                <li> <a href="#parts">Parts</a></li>
+                <li> <a href="#services"> Services </a></li>
+                <li> <a href="#aboutus"> About Us </a></li>
+            </ul>
+        <!-- Search Icon -->
+            <i class='bx bx-search' id="search-icon"></i>
+        <!-- Search Box -->
+            <div class="search-box container">
+                <input type="search" name="" id="" placeholder="Search here...">
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Home -->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1> We Have Cars All Around The Globs</h1>
+            <h1> We Have Everything <br>Your <span>Car </span>Need</h1>
+            <p> Please Make Your Shopping <br>With Satisfication</p><br>
+
+            <!-- Home Button -->
+            <a href="{{ url_for('sign_in') }}" class="btn"> Discover Now</a>
+        </div>
+    </section>
+
+
+    <!-- Link to JS -->
+    <script src="{{ url_for('static', filename = 'JS/main.js')}}"></script>
+
+
+</body>
+</html>

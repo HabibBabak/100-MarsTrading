@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; 
+    padding: 0;
+    scroll-behavior: smooth
+
+}
+
+/* variables */ 
+
+:root{
+    --mian-color: #d90429;
+    --text-color: #020102;
+    --bg-color: #eff4f5;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    color: var(--text-color);
+}
+
+.container{
+    max-width: 1068;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 35px;
+}
+
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    color:#eff4f5;
+    display:block;
+}
+
+.logo{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:#eff4f5;
+}
+
+.logo span{
+    color: var(--mian-color);
+}
+
+.navbar{
+    display:flex;
+    column-gap: 2rem;
+}
+
+.navbar a {
+    color:white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.navbar a:hover, 
+.navbar .active{
+    color: var(--mian-color);
+    border-bottom: 3px solid var(--mian-color);
+}
+
+#search-icon{
+    font-size: 24px;
+    cursor: pointer;
+    color: #eff4f5;
+}
+
+.search-box{
+    position: absolute;
+    top: 110%;
+    right: 0;
+    left: 0;
+    background: var(--bg-color);
+    box-shadow: 4px 4px 20px rgb(15 54 55 / 10%);
+    border: 1px solid var(--mian-color);
+    border-radius: 0.5rem;
+    max-width: 1068;
+    margin-left: 200px;
+    margin-right: 200px;
+    clip-path: circle(0% at 100% 0%);
+
+}
+
+.search-box.active {
+    clip-path: circle(144% at 100% 0%);
+}
+.search-box input {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+}
+
+.home{
+    max-width: 1425px;
+    margin: auto;
+    width: 100%;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    background: url(images/6.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center left;
+    color: #eff4f5;
+
+}
+
+.home-text{
+    padding: 40px;
+
+}
+
+.home-text{
+    font-size: 1rem;
+}
+
+.home-text span{
+    color: var(--mian-color);
+}
+.home-text p{
+    font-size: 0.938;
+    font-weight: 300;
+    margin: 0.5rem 0 1.2rem;
+}
+.btn{
+    padding: 10px 22px;
+    background: var(--mian-color);
+    color: var(--bg-color);
+    font-weight: 400;
+}
+.btn:hover{
+    background: rgb(235, 111, 111);
+}

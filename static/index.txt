@@ -1,0 +1,148 @@
+For installing the mongoDB
+
+brew tap mongodb/brew
+brew update
+
+brew install mongodb-community@7.0
+
+brew services start mongodb-community@7.0
+
+mongosh
+
+For opening the mongoDB
+
+brew services start mongodb-community@7.0
+
+mongosh
+
+
+// 
+to see how many data base
+
+show database
+//
+
+create data base 
+ use employees
+ //
+
+creating the database
+db.createCollection("employeetInfo")
+//
+
+to see the database
+show collections
+//
+
+To insert data in the databses
+db.employeeInfo.insert({
+... "full_name": "John",
+...  "origion": "China",
+... "department": "webdeveloper",
+... "task": [
+... " work on the Nav Bar",
+... "Fix the database"],
+... "start_date": " March 3 2022"
+... })
+//
+
+to check the inserted info
+db.employeeInfo.find()
+//
+
+for creating mnay insert
+db.employeeInfo.insertMany([ {"Full_name": "Ashely", "DEpartment": "Cyber Security", "Origion": "U.S", "Start_Date": "July 27: 2021"}, {"Full_name": "Jhon", "Department": " Engineer", "Origion": "Canada"}])
+//
+
+for updating the information in the collection
+db.employeeInfo.update({"full_name": "Jamal"}, {$set: {"full_name": "Jamal Naser"}})
+//
+
+for deleting the info 
+db.employeeInfo.deleteOne({"work_time": "Morning"})
+//
+
+Project recipe
+
+Connect to MongoDB
+mongosh
+
+Create a database call recipeDB
+use recipeDB
+
+Create a collection call recipeName
+db.createCollection("recipes")
+
+Add recipe information
+In this part, I want you to create up to 20 recipes. You can have your data structure an any format. Here an example
+
+"title": "Spaghetti Bolognese",
+  "description": "A classic Italian pasta dish...",
+  "ingredients": [
+    {
+      "name": "Spaghetti",
+      "quantity": "200g"
+    },
+    {
+      "name": "Minced Beef",
+      "quantity": "300g"
+    },
+    // ... other ingredients
+  ],
+  "instructions": [
+    "Boil the spaghetti until al dente...",
+    "In a separate pan, cook the beef...",
+    // ... step by step instructions
+  ],
+  "likes": 100,
+  "comments": "Very Deliciouse",
+
+You can use insert to insert one entry or insertMany
+
+Here is how to insert data for one
+db.recipes.insert({
+"title": "Cheesy Pasta",
+  "description": "A delightful cheesy treat.",
+  "ingredients": [{"name": "Pasta", "quantity": "200g"}, {"name": "Cheese", "quantity": "100g"}],
+  "instructions": ["Cook pasta until al dente.", "Mix in cheese until melted."],
+})
+
+Here is how to insert data for multiple.
+insertMany contain square bracket.
+
+db.recipes.insertMany([
+{
+  "title": "Cheesy Pasta",
+  "description": "A delightful cheesy treat.",
+  "ingredients": [{"name": "Pasta", "quantity": "200g"}, {"name": "Cheese", "quantity": "100g"}],
+  "instructions": ["Cook pasta until al dente.", "Mix in cheese until melted."],
+  "dateAdded": ISODate("2023-10-05")
+},
+{
+  "title": "Garlic Bread",
+  "description": "Aromatic garlic bread.",
+  "ingredients": [{"name": "Bread", "quantity": "1 loaf"}, {"name": "Garlic", "quantity": "3 cloves"}],
+  "instructions": ["Slice bread.", "Spread garlic and bake until golden brown."],
+  "dateAdded": ISODate("2023-10-06")
+},
+])
+
+db.recipes.insertMany([
+{
+  "title": "frnch fries",
+  "description": "A delightful fries recipe.",
+  "ingredients": [{"name": "potato", "quantity": " 1500 g"}, {"name": "oil", "quantity": "200g"}],
+  "instructions": ["First fry the potato.", "Then add salt ."],
+  "dateAdded": ISODate("2023-10-05")
+},
+{
+  "title": "Potato",
+  "description": "Potato Recipe.",
+  "ingredients": [{"name": "Potato", "quantity": "300 g"}, {"name": "Onion and Tomato", "quantity": "400 g"}],
+  "instructions": ["Boil the potato", "then prepare the sacuce of onion tomato and garlic then add the potato and cook it for 30 minutes"],
+  "dateAdded": ISODate("2023-10-06")
+},
+])
+
+
+

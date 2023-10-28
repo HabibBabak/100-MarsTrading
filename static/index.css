@@ -1,0 +1,779 @@
+/* Google Fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 65.5%;
+}
+
+:root{
+    --main-color:#d30d0d;
+    --text-color:#141622;
+}
+
+
+/*==To header section stsart ==*/
+.top-header .out-box{
+    width: 100%;
+    background: var(--main-color);
+
+}
+
+.top-header .out-box .inside-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #141622;
+    padding-left: 0.5rem 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    clip-path: polygon(8% 0%, 92% 0%, 96% 100%, 5% 100%); /*== for making the polygon shap in the first section==*/
+}
+
+.out-box .inside-box .col-1{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-left: 13rem;
+}
+.out-box .inside-box .col-1 span{
+    font-size: 1.3rem;
+}
+.out-box .inside-box .col-1 span i{
+    color: var(--main-color);
+    padding-right: 0.2rem;
+    font-size: 1.3rem;
+}
+
+.out-box .inside-box .col-2{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-right: 13rem;
+}
+
+.out-box .inside-box .col-2 a,
+.out-box .inside-box .col-2 span,
+.out-box .inside-box .col-2 .social i{
+    color: #fff;
+    font-size: 1.3rem;
+    transition: 0.4s;
+}
+
+.out-box .inside-box .col-2 .social {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.out-box .inside-box .col-2 a i{
+    padding-right: 0.5rem;
+}
+
+.out-box .inside-box .col-2 .social i:hover,
+.out-box .inside-box .col-2 a:hover{
+    color: var(--main-color);
+}
+
+/*=== media querry ===*/
+@media(max-width:1150px){
+    .out-box .inside-box .col-1{
+        margin-left: 8rem;
+    }
+
+    .out-box .inside-box .col-1{
+        margin-left: 8rem;
+    }
+}
+/*== if the screen size become smaller dont display the top header ==*/
+@media(max-width:1300px){
+    .top-header{
+        display: none;
+    }
+}
+
+/*==navbar section start ==*/
+.header{
+    width: 100%;
+    position: sticky;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.1rem 4.5%;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(190, 190, 190, 0.5),
+    0 0 10px rgba(190, 190, 190, 0.5);
+    z-index: 111;
+    transition: 0.4s ease;
+}
+
+/*== connecting to JS the scroll and sticky for header tag to d
+dont leave the page to become full ==*/
+
+.header.sticky{
+    padding:0 9.5%;
+
+}
+
+.header .logo img {
+    width: 200px;
+}
+.header nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7rem;
+}
+
+nav .navbar ul li{
+    padding: 2.5rem 0.5rem;
+
+}
+
+nav .navbar .navLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+}
+
+nav .navbar .navLink li a{
+    color:var(--text-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    position: relative;
+}
+
+nav .others {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+nav .others i{
+    font-size: 1.3rem;
+    color: var(--main-color);
+    cursor: pointer;
+
+}
+
+nav .others .addBtn{
+    position: relative;
+    color: #fff;
+    background: var(--main-color);
+    padding: 1.5rem 1.7rem;
+    font-size: 1.6rem;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+nav .others .addBtn:hover{
+    background: var(--main-color);
+    color: #fff;
+
+}
+
+nav .others .addBtn i,
+nav .others .addBtn i:hover{
+    color: #fff;
+    padding-right: 0.5rem;
+
+}
+
+#menuBtn{
+    font-size: 2.5rem;
+}
+
+nav .navbar ul li:hover,
+nav .others i:hover{
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+nav .navbar ul li a:hover,
+nav .navbar ul li a.active{
+    color: var(--main-color);
+} 
+
+nav .navbar ul li .drop-down{
+    position: absolute;
+    top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: justify;
+    width: 180px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(190, 190, 190, 0.5);
+    padding: 1rem 0 0;
+    display: none;
+}
+/*== drop down menu for inventory==*/
+nav .navbar ul li:hover .drop-down{
+    display: flex;
+}
+
+nav .navbar ul li .drop-down li{
+    border-bottom: 1px solid rgba(190, 190, 190, 0.5);
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    z-index: 100;
+    overflow: hidden;
+}
+nav .navbar ul li .drop-down li a{
+    font-size: 1rem;
+    transition: 0.4s ease;
+}
+
+nav .navbar ul li .drop-down li a:hover{
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
+.drop-down li .drop-down-six,
+.drop-down li .drop-down-five,
+.drop-down li .drop-down-four,
+.drop-down li .drop-down-three,
+.drop-down li .drop-down-two{
+    width: 180px;
+    position: absolute;
+    left: 180px;
+    margin-top: -3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: justify;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(190, 190, 190, 0.5);
+    padding: 1 rem 0 0;
+    z-index: 111;
+    overflow: hidden;
+    display: none;
+}
+
+.drop-down li:hover .drop-down-six,
+.drop-down li:hover .drop-down-five,
+.drop-down li:hover .drop-down-four,
+.drop-down li:hover .drop-down-three,
+.drop-down li:hover .drop-down-two{
+    display: flex;
+}
+
+.drop-down li .chev{
+    position: absolute;
+    left: 150px;
+    top: 5px;
+    color: var(--text-color);
+}
+
+.drop-down li:hover .chev{
+    color: var(--main-color);
+}
+
+/* == Media Queery ==*/
+@media(max-width:1150){
+    nav .navbar ul li{
+        padding: 2.5rem 0;
+    }
+    nav .others{
+        gap: 1rem;
+    }
+
+    nav .navbar .navLink{
+
+        gap: 0.5rem;
+    }
+}
+
+@media(max-width:1190){
+    nav .others .addBtn{
+        display: none;
+    }
+}
+
+@media(max-width:991){
+    nav .navbar .navLink{
+        display: block;
+        position: absolute;
+        top: 5.3rem;
+        width: 100%;
+        left: 0px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(190, 190, 190, 0.5),
+        0 0 10px rgba(190, 190, 190, 0.5);
+        padding-left: 30px;
+        transition: 0.5s ease-in-out;
+        display: none;
+    }
+
+    nav .navbar .navLink.active{
+        display: block;
+    }
+
+    .header.sticky{
+        padding: 0.6rem 9.5%;
+    }
+
+    nav .navbar ul li{
+        padding: 1rem 0;
+    }
+    nav .navbar ul li .drop-down{
+        position: sticky;
+        display: none;
+    }
+
+    .drop-down li:hover .drop-down-six,
+    .drop-down li:hover .drop-down-five,
+    .drop-down li:hover .drop-down-four,
+    .drop-down li:hover .drop-down-three,
+    .drop-down li:hover .drop-down-two{
+        display: sticky;
+        margin-top: 0rem;
+    }
+
+    nav .others i.cart{
+        display: none;
+    }
+}
+
+@media(max-width:420){
+    .header .logo img{
+        width: 120px;
+    }
+    nav .navbar .navLink{
+        top: 4.6rem;
+    }
+}
+
+/*== Home section start ==*/
+
+.home .slide{
+    width: 200;
+    height: 110vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    padding: 0 15rem;
+    
+}
+
+.home .slide.slide-one{
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.8), rgba(255,0,0)), url(/static/images/Mars-logo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .slide.slide-two{
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.8), rgba(235,235,37)), url(/static/images/Mars-logo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .slide.slide-three{
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.8), rgba(43,171,235)), url(/static/images/Mars-logo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .slide .col-1{
+    flex: 1 1 20rem;
+}
+
+.home .slide .col-2{
+    flex: 1 1 40rem;
+    padding-top: 3rem;
+}
+
+.home .slide .col-1 h4{
+    font-size: 2.5rem;
+    color:var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 3rem;
+}
+
+.home .slide .col-1 h1{
+    font-size: 3rem;
+    color:#fff;
+    text-transform:capitalize;
+    letter-spacing: 3px;
+}
+.home .slide .col-1 p{
+    color: #fff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    padding-top: 2rem;
+}
+
+.home .slide .col-1 .button{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 4rem;
+}
+.home .slide .col-1 .button button{
+    padding: 1.8rem 2.8rem 1.8rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.home .slide .col-1 .button button i{
+    font-size: 2.5rem;
+    position: absolute;
+    top: 33%;
+    right: -1rem;
+    transform: translate(-40%);
+}
+
+.home .slide .col-1 .button button.about{
+    background: var(--main-color);
+    color: #fff;
+}
+
+.home .slide .col-1 .button button.learn{
+    background: #fff;
+    color: var(--main-color);
+}
+
+.home .slide .col-1 .button button.about:hover,
+.home .slide .col-1 .button button.learn:hover{
+    background:var(--text-color);
+    color: #fff;
+}
+
+.home .slide .col-2 img{
+    width: 130%;
+    height: 55rem;
+}
+
+.home .swiper [class^="swiper-button-"] {
+    color: #fff;
+    background: rgba(211, 13, 13, 0.5);
+    padding: 2.5rem;
+}
+
+.home .swiper [class^="swiper-button-"]:hover{
+    background: var(--main-color);
+}
+
+.home .swiper [class^="swiper-button-"]::before{
+    font-size: 2rem;
+}
+
+@media(max-width:1150px){
+    .home .slide{
+        height: auto;
+        padding: 5rem 10rem;
+        display: block;
+    }
+    .home .slide .col-2 img{
+        width: 100%;
+        height: 35rem;
+    }
+}
+
+@media(max-width:600px){
+    .home .slide{
+        padding: 5rem 7rem;
+    }
+
+    .home .slide .col-1 h4{
+        font-size: 2rem;
+    }
+     
+    .home .slide .col-1 h1{
+        font-size: 3.2rem;
+    }
+    .home .slide .col-1 .button button{
+        padding: 1.5rem 2.8rem 1.5rem 2rem;
+        font-size: 1.3rem;
+
+    }
+    .home .slide .col-1 .button button i{
+        font-size: 2rem;
+    }
+
+    .home .slide .col-2 img{
+        width: 100%;
+        height: 30rem;
+    }
+}
+
+@media(max-width:450px){
+    .home .slide .col-1 h4{
+        font-size: 1.3rem;
+    }
+    .home .slide .col-1 h1{
+        font-size: 2.2rem;
+    }
+}
+
+/*== Perefect Section ==*/
+.search{
+    position:relative;
+    padding: 0 16rem;
+    background: #f7f2f2;
+}
+
+.search .find{
+    max-width: 1200px;
+    width: 100%;
+    padding: 2.5rem;
+    position: absolute;
+    top: -7rem;
+    z-index: 111;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(190,190,190,0.5),
+    0 0 10px rgba(190, 190, 190, 0.5);
+    overflow: hidden;
+}
+
+.find .find-row{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.find h3{
+    font-size: 2.7rem;
+    letter-spacing: 1px;
+    padding-bottom: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+.find .find-row h4{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    padding-bottom: 1.5rem;
+}
+
+.find .find-row select{
+    border: 1px solid #646161;
+    font-size: 1.5rem;
+    width: 200px;
+    font-weight: 500;
+    height: 45px;
+    padding: 0 1rem;
+    color: #646161;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.find .find-row select option{
+    padding: 0.5rem;
+    border-bottom: 1px solid #646161;
+}
+
+.search .search-btn button{
+    background: var(--main-color);
+    margin-top: 4rem;
+    padding: 1.3rem 2rem;
+    border-radius: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.search .search-btn button i {
+    padding-right: 0.5rem;
+}
+
+.search .search-btn button:hover{
+    background: var(--text-color);
+}
+
+/*-- market section start--*/
+section{
+    padding: 2.5rem 16rem;
+    background: #f7f2f2;
+    
+}
+
+.market{
+    padding-top: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30rem;
+}
+
+.market .col-3{
+    flex: 1 1 20rem;
+    position: relative;
+}
+
+.market .col-3 img.one{
+    width: 150%;
+    height: 45rem;
+}
+
+.market .col-4{
+    flex: 1 1 20rem;
+}
+
+.market .col-3 .service{
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap:20px;
+    background:#fff;
+    padding: 1rem;
+    border-radius: 20px;
+    margin: -5rem;
+}
+
+.market .col-3 .service img.two{
+    width: 120px;
+
+}
+
+.market .col-3 .service span{
+    color: var(--main-color);
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.market .col-4 h4{
+    color: var(--main-color);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight:500 ;
+    padding-bottom: 1rem;
+}
+.market .col-4 h4 i{
+    padding-right: 0.5rem;
+
+}
+.market .col-4 h3{
+    font-size: 3.5rem;
+    color: var(--text-color);
+    padding-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+.market .col-4 h3 span{
+    color: var(--main-color);
+}
+
+.market .col-4 p.text{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding-bottom: 1rem;
+}
+.market .col-4 .p1{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.market .col-4 .p1 i{
+    padding-right: 0.5rem;
+    color: var(--main-color);
+    font-size: 1.6rem;
+}
+
+.market .col-4 button{
+    position: relative;
+    margin-top: 2.5rem;
+    background: var(--main-color);
+    color: #fff;
+    padding: 1.5rem 3.5rem;
+    font-size: 1.6rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.market .col-4 button i{
+    position: absolute;
+    top: 20px;
+    font-size: 2rem;
+}
+.market .col-4 button:hover{
+    background: var(--text-color);
+}
+
+/*== Counter Section ==*/ 
+
+.counter{
+    width: 100%;
+    min-height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    background: url(/static/images/ba.jpg);
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+}
+
+.counter .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.counter .container img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 0.5rem;
+}
+
+.counter .container span.num{
+    padding: 1rem 0;
+    font-size: 4.6rem;
+    font-weight: 600;
+    color:var(--main-color);
+}
+
+.counter .container span.text{
+    color:#fff;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.counter .container span.text i{
+    padding-right: 0.5rem;
+}

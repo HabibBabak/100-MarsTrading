@@ -1,0 +1,62 @@
+
+# Flask Fundamental
+
+## Installation
+```
+pip install Flask
+```
+
+## Importing module
+To use flask, first import the library for it.
+```python
+from flask import Flask
+```
+
+## Initialize flask
+To get started with flask use will need to initialize it.
+```python
+# Create a flask app
+app = Flask(__name__)
+
+```
+
+## Routes
+In Flask, routing is the process of mapping URLs to specific functions. You define routes using decorators to associate URLs with functions that will be executed when a user accesses that URL. For example:
+
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Hello, Flask!'
+```
+
+## Render HTML
+Templates are HTML files that allow you to dynamically generate and render content using placeholders. Flask uses the Jinja2 templating engine for this purpose.
+```python
+from flask import render_template
+
+@app.route('/user')
+def profile():
+    return render_template('profile.html')
+```
+
+## HTTP
+Flask supports different HTTP methods like GET, POST, PUT, DELETE, etc. You can specify the methods that a route should respond to using the methods parameter in the route decorator.
+```python
+@app.route('/submit', methods=['POST'])
+def submit_form():
+    # Handle form submission logic here
+```
+
+## Static Files
+You can serve static files like CSS, JavaScript, and images using the static folder in your project directory. Flask provides a url_for function to generate URLs for these static files.
+
+## Grab data
+To grab data, you can use request and the name of the input from HTML
+```python
+@app.route("/insert", methods=["POST"])
+def insert_data():
+    data = request.form["blog"]
+  ```

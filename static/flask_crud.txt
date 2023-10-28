@@ -1,0 +1,86 @@
+# Flask CRUD
+
+## Initialization
+```python
+from flask import Flask, render_template, request, redirect, url_for
+from flask_mysqldb import MySQL
+import os
+# Initilize
+app = Flask(__name__)
+
+# MySQL Configuration
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+#app.config['MYSQL_PASSWORD'] = 'password'
+app.config['MYSQL_DB'] = 'student'
+app.config['SECRET_KEY'] = os.urandom(24)
+
+# Initilization of MySQL
+mysql = MySQL(app)
+```
+
+## Create
+```python
+@app.route('/sign_up', methods=['GET', "POST"])
+def sign_up():
+    if request.method == 'POST':
+        name = request.form['full_name']
+        username = request.form['username']
+        password = request.form['password']
+        
+        # Send Data to database
+        cur = mysql.connection.cursor()
+        cur.execute('INSERT INTO student_info (name, username,password) VALUES (%s,%s,%s)', (name,username,password))
+        mysql.connection.commit()
+        cur.close()
+        
+        return redirect(url_for('home'))
+
+    return render_template('sign_up.html')
+```
+
+## Read Data
+```python
+# Routes
+@app.route('/', methods=["GET"])
+def home():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM student_info")
+    data = cur.fetchall()
+    print(data)
+    cur.close 
+
+    return render_template('home.html', data=data)
+```
+
+## Update
+```python
+
+@app.route("/edit/<int:id>", methods=["GET", "POST"])
+def edit(id):
+    if request.method == "POST":
+        username = request.form["username"]
+        name = request.form["full_name"]
+        password = request.form["password"]
+        cur = mysql.connection.cursor()
+        cur.execute("UPDATE student_info SET username = %s, name = %s, password = %s WHERE id=%s", (username,name,password,id))
+        mysql.connection.commit()
+        cur.close()
+        return redirect(url_for("home"))
+    else:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM student_info WHERE id=%s", (id,))
+        data = cur.fetchone()
+        mysql.connect.close()
+        return render_template("edit.html", data=data)
+```
+## Delete
+
+```python
+@app.route("/delete/<int:id>")
+def delete(id):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM student_info WHERE id= %s", [id])
+    mysql.connection.commit()
+
+    return redirect(url_for("home"))

@@ -1,0 +1,111 @@
+
+# Flask - MysqlDB
+
+## Installation
+``` terminal
+pip install Flask-MySQLdb
+```
+
+## Initialization
+
+```python
+from flask import Flask
+from flask_mysqldb import MySQL
+import os 
+app = Flask(__name__)
+
+# Configure MySQL
+app.config['MYSQL_HOST'] = 'localhost'  # Replace with your MySQL host
+app.config['MYSQL_USER'] = 'your_username'
+app.config['MYSQL_PASSWORD'] = 'your_password'
+app.config['MYSQL_DB'] = 'your_database_name'
+app.config['SECRET_KEY'] = os.urandom(24)
+# Initialize MySQL
+mysql = MySQL(app)
+```
+
+## Crud
+```python
+# Create Record
+@app.route('/add_record', methods=['GET', 'POST'])
+def add_record():
+    if request.method == 'POST':
+        name = request.form['name']
+        age = request.form['age']
+        cur = mysql.connection.cursor()
+        cur.execute('INSERT INTO records (name, age) VALUES (%s, %s)', (name, age))
+        mysql.connection.commit()
+        cur.close()
+        return redirect(url_for('index'))
+    return render_template('add_record.html')
+
+# Read Record
+@app.route('/view_records')
+def view_records():
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM records')
+    records = cur.fetchall()
+    cur.close()
+    return render_template('view_records.html', records=records)
+
+
+# Edit Record
+@app.route('/edit_record/<int:id>', methods=['GET', 'POST'])
+def edit_record(id):
+    cur = mysql.connection.cursor()
+    if request.method == 'POST':
+        name = request.form['name']
+        age = request.form['age']
+        cur.execute('UPDATE records SET name = %s, age = %s WHERE id = %s', (name, age, id))
+        mysql.connection.commit()
+        cur.close()
+        return redirect(url_for('index'))
+    cur.execute('SELECT * FROM records WHERE id = %s', (id,))
+    record = cur.fetchone()
+    cur.close()
+    return render_template('edit_record.html', record=record)
+
+# Delete Record
+@app.route('/delete_record/<int:id>')
+def delete_record(id):
+    cur = mysql.connection.cursor()
+    cur.execute('DELETE FROM records WHERE id = %s', (id,))
+    mysql.connection.commit()
+    cur.close()
+    return redirect(url_for('index'))
+```
+
+# Mysql
+
+## Mysql Commands
+
+## Create Table
+```sql
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## Insert Table
+```sql
+INSERT INTO users (username, email, password)
+VALUES ('admin', 'admin@example.com', 'hashed_password');
+```
+
+## Update Table
+```sql
+-- Update the content and title of a blog post with ID 1
+UPDATE posts
+SET title = 'New Title', content = 'New content for the post'
+WHERE id = 1;
+```
+
+## Delete Table
+```sql
+DELETE FROM posts
+WHERE id = 2;
+```
