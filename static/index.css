@@ -654,11 +654,11 @@ section{
     left: 0;
     display: flex;
     align-items: center;
-    gap:20px;
+    gap:10px;
     background:#fff;
     padding: 1rem;
     border-radius: 20px;
-    margin: -5rem;
+    margin: -3.7rem;
 }
 
 .market .col-3 .service img.two{
@@ -776,4 +776,52 @@ section{
 
 .counter .container span.text i{
     padding-right: 0.5rem;
+}
+
+/*== Arrival section ==*/
+
+.arrivals{
+    text-align: center;
+    padding-top: 7rem;
+}
+
+.arrivals h4{
+    color: var(--main-color);
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding-bottom: 1.5rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+
+}
+
+.arrivals h4 i{
+    padding-right: 0.5rem;
+}
+
+.arrivals h1{
+    padding-bottom: 4rem;
+    font-size: 4.7rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: var(--text-color);
+}
+
+.arrivals h1 span{
+    color: var(--main-color);
+}
+
+.arrivals .arr-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.arr-row .arr-col{
+    padding: 1rem;
+    box-shadow: 0 0 5px #646161;
+    background: #fff;
+    border-radius: 10px;
+    text-align: justify;
 }

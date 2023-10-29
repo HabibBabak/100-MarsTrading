@@ -109,3 +109,65 @@ WHERE id = 1;
 DELETE FROM posts
 WHERE id = 2;
 ```
+
+##make new respasotry in gethub.com
+## 100-MarsTrading ,respasotry
+habibullah.sahil@yahoo.com
+Babakkhan123
+github conneting to the project
+in the project terminal 
+
+##1. paste in the terminal
+echo "# 100-MarsTrading" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/HabibBabak/100-MarsTrading.git
+git push -u origin main
+ 
+ ##then 
+##2. git add .
+
+###4. git push -u origin main
+
+
+after that we should make an account in railway 
+
+##to terminal install
+sudo npm install -g railway
+or 
+sudo npm install -g @railway/cli
+ 
+ ##to open 
+ railway
+ ##
+ to login in the terminal 
+ railway login  
+##
+then
+ railway init
+## in terminal
+ type the name of the project as my project is MarsTrading
+
+Terminal
+ ###Activating the vertual enviornment 
+ python3 -m venv myenv
+ source myenv/bin/activate
+ 
+ # install packages
+ pip install flask
+ pip install Flask-MySQLdb
+ pip install gunicorn
+ pip freeze > requirements.txt)
+ # railway up
+
+Project file
+ 1 
+
+  
+
+
+create 3 files Dockerfile, Procfile, railway.yml
+
+
