@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Inventory Grid</title>
+    <!-- swiper from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- Link to css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='inventory_grid.css' )}}">
+    <!-- Link to Boxicons -->
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' >
+
+</head>
+
+<body>
+        <!-- Nav Container -->
+        <div class="top-header">
+            <div class="out-box">
+                <div class="inside-box">
+                    <div class="col-1">
+                        <span> <i class='bx bx-envelope'></i> habibullah.sahil@yahoo.com</span>
+                        <span> <i class='bx bxs-phone-call'></i> +81-80-4640-1287</span>
+                        <span> <i class='bx bxs-alarm'></i> Work Hours Monday - Friday (08 AM - 06 PM )</span>
+                    </div>
+
+                    <div class="col-2">
+                        <a href="{{ url_for('sign_in') }}"> <i class='bx bx-arrow-to-right'></i> Login</a>
+                        <a href="{{ url_for('sign_up') }}" > <i class='bx bxs-user'></i> Register</a>
+                        <span> Follow Us:</span>
+                        <div class="social">
+                            <i class='bx bxl-facebook-circle' ></i>
+                            <i class='bx bxl-twitter'></i>
+                            <i class='bx bxl-instagram' ></i>
+                            <i class='bx bxl-linkedin'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- navbar section start -->
+        <header class="header">
+            <div class="logo">
+                <img src="./static/images/Mars-logo.jpg" alt="">
+            </div>
+
+            <nav>
+                <div class="navbar">
+                    <ul class="navLink">
+                        <li> <a href="{{ url_for('index') }}" class="active"> Home</a> </li>
+                        <li> <a href="#"> About </a> </li>
+                        <li> <a href="#" >Inventory <i class='bx bx-chevron-down'></i></a>
+                            <ul class="drop-down">
+                                <li> <a href="#"> Inventory Grid</a></li>
+                                <li> <a href="#"> Inventory List</a></li>
+                                <li> <a href="#"> Inventory Single </a></li>
+                            </ul>
+                        </li>
+
+                        <li> <a href="#">Pages <i class='bx bx-chevron-down'></i></a>
+                            <ul class="drop-down">
+                                <li> <a href="#"> About</a></li>
+
+                                <li> <a href="#"> Car List <i class='bx bx-chevron-down chev'></i></a>
+                                    <ul class="drop-down-two">
+                                        <li> <a href="#"> Listing Grid</a></li>
+                                        <li> <a href="#"> Listing List</a></li>
+                                        <li> <a href="#"> Listing Single</a></li>
+                                        <li> <a href="#"> Compare</a></li>
+                                    </ul>
+                                </li>
+
+                                <li> <a href="#"> Account </i></a></li>
+                                <li> <a href="#"> My Account <i class='bx bx-chevron-down chev'></i></a>
+                                    <ul class="drop-down-three">
+                                        <li> <a href="#"> Dashboard</a></li>
+                                        <li> <a href="#"> My profile</a></li>
+                                        <li> <a href="#"> My Listing </a></li>
+                                        <li> <a href="#"> Add Listing </a></li>
+                                        <li> <a href="#"> My Favourates </a></li>
+                                        <li> <a href="#"> Messages</a></li>
+                                        <li> <a href="#"> Setting </a></li>
+                                    </ul>
+                                </li>
+
+                                <li> <a href="#"> Authentication <i class='bx bx-chevron-down chev'></i></a>
+                                    <ul class="drop-down-four">
+                                        <li> <a href="{{ url_for('sign_in') }}"> Login </a></li>
+                                        <li> <a href="{{ url_for('sign_up') }}"> Register </a></li>
+                                        <li> <a href="#"> Forget Password </a></li>
+                                    </ul>
+                                </li>
+
+                                <li> <a href="#"> Services <i class='bx bx-chevron-down chev'></i></a>
+                                    <ul class="drop-down-five">
+                                        <li> <a href="#"> Services</a></li>
+                                        <li> <a href="#"> Services Single </a></li>
+                                    </ul>
+                                </li>
+
+                                <li> <a href="#"> Dealer <i class='bx bx-chevron-down chev'></i></a>
+                                    <ul class="drop-down-six">
+                                        <li> <a href="#"> Dealer</a></li>
+                                        <li> <a href="#"> Dealer Single </a></li>
+                                    </ul>
+                                </li>
+
+                                <li> <a href="#"> Extra Pages</a></li>
+                                <li> <a href="#"> Our Team</a></li>
+                                <li> <a href="#"> Pricing Plan</a></li>
+                                <li> <a href="#"> Calculator</a></li>
+                                <li> <a href="#"> FAQ</a></li>
+                                <li> <a href="#"> Testimonials</a></li>
+                            </ul>
+                        </li>
+
+                        <li> <a href="#">Shop <i class='bx bx-chevron-down'></i></a>
+                            <ul class="drop-down">
+                                <li> <a href="#"> Shop</a></li>
+                                <li> <a href="#"> Shop Casting</a></li>
+                                <li> <a href="#"> Shop Checkout</a></li>
+                                <li> <a href="#"> Shop Single</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li> <a href="#">Blog <i class='bx bx-chevron-down'></i></a>
+                            <ul class="drop-down">
+                                <li> <a href="#"> Blog</a></li>
+                                <li> <a href="#"> Blog Single</a></li>
+                            </ul>
+                        </li>
+
+                        <li> <a href="#">Contact </a> </li>
+                    </ul>
+                        
+                </div>
+                <div class="others">
+                    <i class='bx bx-search'></i>
+                    <i class='bx bx-cart-download cart'></i>
+                    <button class="addBtn"><i class='bx bx-plus-circle'></i> Add Listing</button>
+                    <i class='bx bx-menu' id="menuBtn"></i>
+                </div>
+            </nav>
+        </header>
+
+
+        <!-- Download section-->
+
+        <section class="download">
+            <div class="app-row">
+                <div class="app-col">
+                    <h4> <i class="bx bx-car"></i> Get our App </h4>
+                    <h1 class="marsTrading"> download <span> our MarsTrading</span> App for Free</h1>
+
+                    <p class="test"> Lorem ipsum dolor sit amet cons</p>
+
+                    <div class="button">
+                        <a href="#" class="google">
+                            <img src="./static/images/download/play-store.png" alt="">
+                            <div class="text">
+                                <span> get it on </span>
+                                <p> Google Play</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="apple">
+                            <img src="./static/images/download/app-store.png" alt="">
+                            <div class="text">
+                                <span> get it on </span>
+                                <p> App Store</p>
+                            </div>
+                        </a>
+            
+                    </div>
+                </div>
+                <div class="app-col">
+                    <img class="down" src="./static/images/download/01.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- footer section start-->
+        <div class="footer">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <img src="./static/images/mars-logo.png" alt="">
+                    <p class="text"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <span> <i class="bx bx-phone"></i>+81- 80-4640-1287</span>
+                    <span> <i class="bx bx-location-plus"></i>2-44-12, Koyamichi, Hirkata-shi, Osaka, Japan</span>
+                    <span>  <i class="bx bx-envelope"></i>info@mail.com </span>
+                </div>
+                <div class="footer-col">
+                    <h5> Quick Links </h5>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>About Us</a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Update News</a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Testimonials</a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Terms of Services</a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Privacy Policy</a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Our Dealers</a>
+                </div>
+                <div class="footer-col">
+                    <h5> Support Center </h5>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>FAQ's</a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Affiliates</a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Booking Tips</a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Sell Vehicles</a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Contact Us </a>
+                    <a href="#"> <i class="bx bx-chevron-right"></i>Site Map</a>
+                </div>
+
+                <div class="footer-col">
+                    <h5> Newsletter </h5>
+                    <p class="text"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <input type="text" placeholder="Your Email">
+                    <button> Subscribe Now <i class="bx bx1-telegram"></i></button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p> &copy; Copyright 2023 <span> MarsTrading</span> All Right Reserved.</p>
+                <div class="social">
+                    <i class='bx bxl-facebook'></i>
+                    <i class="bx bxl-twitter"></i>
+                    <i class="bx bxl-linkedin"></i>
+                    <i class="bx bxl-youtube"></i>
+                </div>
+            </div>
+            
+        </div>
+
+
+         <!-- swiper js link-->
+         
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="../static/JS/script.js"></script>
+        <!-- <script src="{{url_for('static', filename='script.js')}}"></script> -->
+
+    
+   
+</body>
+</html>

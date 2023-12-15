@@ -110,6 +110,8 @@ DELETE FROM posts
 WHERE id = 2;
 ```
 
+
+### Website deployment ###
 ##make new respasotry in gethub.com
 ## 100-MarsTrading ,respasotry
 habibullah.sahil@yahoo.com
@@ -159,15 +161,27 @@ Terminal
  pip install flask
  pip install Flask-MySQLdb
  pip install gunicorn
- pip freeze > requirements.txt)
+ pip freeze > requirements.txt
  # railway up
 
 Project file
  1 
 
-  
-
-
 create 3 files Dockerfile, Procfile, railway.yml
+
+for updating the project in the railway and gethub we should do 
+git add .
+
+git commit -m "first commit"
+
+git push -u origin main
+
+railway add mysql
+
+railway env create production
+
+for mysql name chnnage 
+mysqldump -u username -p dbname > dbdump.sql
+mysqldump -u root -p student > dbdump.sql
 
 

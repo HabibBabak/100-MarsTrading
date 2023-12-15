@@ -60,4 +60,32 @@ valueDisplay.forEach((valueDisplay) => {
 
 });
 
+/*== client Section ==*/
+
+var swiper = new Swiper(".myClient", {
+  slidesPerView:1,
+  spaceBetween: 10,
+  centeredSlides: true,
+  loop:true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  breakpoints:{
+    640:{
+      slidesPerView:1,
+      spaceBetween:20,
+    },
+    768: {
+      slidesPerView:2,
+      spaceBetween:40,
+    },
+    1024: {
+      slidesPerView:3,
+      spaceBetween:50,
+    },
+  },
+}); 
+
+
 

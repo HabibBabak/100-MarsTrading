@@ -1,0 +1,14 @@
+
+
+deploying the webpage to github
+in termial 
+1
+echo "# 100-MarsTrading" >> README.md        
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/HabibBabak/100-MarsTrading.git
+git push -u origin main
+
+2
